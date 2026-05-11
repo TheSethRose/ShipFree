@@ -2,8 +2,6 @@
 
 import { ArrowUpRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { PremiumButton } from './pricing/premium-button'
-
 export default function CTA() {
   return (
     <section className='py-24 px-4 sm:px-6 bg-[#F4F4F5]'>
@@ -28,7 +26,10 @@ export default function CTA() {
 
         {/* Buttons */}
         <div className='mx-auto mt-10 flex items-center justify-center gap-4'>
-          <PremiumButton className='text-white' />
+          <Button className='font-semibold h-12! px-8 text-base'>
+            Get Started
+            <ArrowUpRight className='h-8 w-8' />
+          </Button>
           <Button variant='outline' className='font-semibold h-12! px-8 text-base'>
             Try demo
             <ArrowUpRight className='h-8 w-8' />

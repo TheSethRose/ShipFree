@@ -9,7 +9,7 @@ import {
   TooltipTrigger,
   TooltipPopup,
 } from '@/components/ui/tooltip'
-import { PremiumButton } from './pricing/premium-button'
+import { ClientOnly } from '@/components/ui/client-only'
 
 const tooltipHandle = TooltipCreateHandle<React.ComponentType>()
 
@@ -44,7 +44,10 @@ export default function Hero() {
             setup so you can spend time building features that actually make money.{' '}
           </p>
           <div className='mx-auto mt-10 flex items-center justify-center gap-4'>
-            <PremiumButton className='text-white' />
+            <Button className='font-semibold h-12! px-8 text-base'>
+              Get Started
+              <ArrowUpRight className='h-8 w-8' />
+            </Button>
             <Button variant='outline' className='font-semibold h-12! px-8 text-base'>
               Try demo
               <ArrowUpRight className='h-8 w-8' />
@@ -53,6 +56,7 @@ export default function Hero() {
         </div>
 
         {/* Built With Section */}
+        <ClientOnly>
         <TooltipProvider>
           <div className='mt-24 w-full'>
             <h2
@@ -161,6 +165,7 @@ export default function Hero() {
             )}
           </Tooltip>
         </TooltipProvider>
+        </ClientOnly>
       </div>
     </main>
   )

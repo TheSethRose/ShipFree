@@ -7,6 +7,7 @@ import {
   AccordionPanel,
 } from '@/components/ui/accordion'
 import Link from 'next/link'
+import { ClientOnly } from '@/components/ui/client-only'
 
 export default function FAQ() {
   const faqs = [
@@ -84,6 +85,7 @@ export default function FAQ() {
 
             {/* Right Section */}
             <div>
+              <ClientOnly>
               <Accordion className='space-y-0'>
                 {faqs.map((faq, index) => (
                   <AccordionItem key={index} className='border-b border-[#E4E4E7] last:border-b-0'>
@@ -96,6 +98,7 @@ export default function FAQ() {
                   </AccordionItem>
                 ))}
               </Accordion>
+              </ClientOnly>
             </div>
           </div>
         </div>
