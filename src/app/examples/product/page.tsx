@@ -1,13 +1,14 @@
 import { ExampleHeader } from '@/components/homepage-examples/shared/example-header'
 import { ExampleFooter } from '@/components/homepage-examples/shared/example-footer'
-import { ExampleFeatureGrid } from '@/components/homepage-examples/shared/example-feature-grid'
-import { ExampleTestimonials } from '@/components/homepage-examples/shared/example-testimonials'
-import { ExampleFAQSection } from '@/components/homepage-examples/shared/example-faq-section'
-import { ExampleCTASection } from '@/components/homepage-examples/shared/example-cta-section'
 import { ProductHero } from '@/components/homepage-examples/product/product-hero'
 import { ProductShowcase } from '@/components/homepage-examples/product/product-showcase'
+import { WhatYouGetSection } from '@/components/homepage-examples/product/what-you-get-section'
+import { UseCasesSection } from '@/components/homepage-examples/product/use-cases-section'
+import { IncludedFilesSection } from '@/components/homepage-examples/product/included-files-section'
 import { LicenseSection } from '@/components/homepage-examples/product/license-section'
 import { ProductPricing } from '@/components/homepage-examples/product/product-pricing'
+import { ProductFAQSection } from '@/components/homepage-examples/product/product-faq-section'
+import { BuyCTASection } from '@/components/homepage-examples/product/buy-cta-section'
 import { productHomepageExample } from '@/data/homepage-examples/product'
 
 export default function ProductExamplePage() {
@@ -19,65 +20,74 @@ export default function ProductExamplePage() {
         logoLabel={data.footer.logoLabel}
         navLinks={[...data.navLinks]}
         primaryCta={data.hero.primaryCta}
-        secondaryCta={data.hero.secondaryCta}
       />
 
       <ProductHero
-        productName={data.hero.productName}
-        tagline={data.hero.tagline}
+        eyebrow={data.hero.eyebrow}
+        title={data.hero.title}
         description={data.hero.description}
+        priceLine={data.hero.priceLine}
         primaryCta={data.hero.primaryCta}
         secondaryCta={data.hero.secondaryCta}
-        trustPoints={data.hero.trustPoints}
+        note={data.hero.note}
+        preview={data.hero.preview}
       />
 
       <ProductShowcase
-        label={data.showcase.label}
         title={data.showcase.title}
         description={data.showcase.description}
-        features={data.showcase.features}
+        highlights={data.showcase.highlights}
+        previewBlocks={data.showcase.previewBlocks}
       />
 
-      <ExampleFeatureGrid
-        label={data.features.label}
-        title={data.features.title}
-        features={data.features.features}
-        background='muted'
+      <WhatYouGetSection
+        title='What you get'
+        items={data.whatYouGet}
+      />
+
+      <UseCasesSection
+        title='Who this is for'
+        description='Four common ways buyers use this product.'
+        cases={data.useCases}
+      />
+
+      <IncludedFilesSection
+        title='Included files'
+        description='Exactly what is in the package.'
+        files={data.includedFiles}
       />
 
       <LicenseSection
-        label={data.license.label}
         title={data.license.title}
-        tiers={data.license.tiers}
+        note={data.license.note}
+        allowed={data.license.allowed}
+        notAllowed={data.license.notAllowed}
       />
 
       <ProductPricing
         label={data.pricing.label}
-        title={data.pricing.title}
-        tiers={data.pricing.tiers}
+        price={data.pricing.price}
+        compareAt={data.pricing.compareAt}
+        description={data.pricing.description}
+        includes={data.pricing.includes}
+        cta={data.pricing.cta}
+        note={data.pricing.note}
+        receipt={data.pricing.receipt}
       />
 
-      <ExampleTestimonials
-        label={data.reviews.label}
-        title={data.reviews.title}
-        testimonials={data.reviews.testimonials}
-        background='muted'
+      <ProductFAQSection
+        title='Questions'
+        questions={data.faq}
       />
 
-      <ExampleFAQSection
-        label={data.faq.label}
-        title={data.faq.title}
-        questions={data.faq.questions}
-        background='white'
-      />
-
-      <ExampleCTASection
-        label={data.cta.label}
-        title={data.cta.title}
-        description={data.cta.description}
-        primaryCta={data.cta.primaryCta}
-        secondaryCta={data.cta.secondaryCta}
-        background='muted'
+      <BuyCTASection
+        label={data.buyCta.label}
+        title={data.buyCta.title}
+        description={data.buyCta.description}
+        price={data.buyCta.price}
+        primaryCta={data.buyCta.primaryCta}
+        secondaryCta={data.buyCta.secondaryCta}
+        checklist={data.buyCta.checklist}
       />
 
       <ExampleFooter

@@ -1,80 +1,227 @@
 export const localBusinessHomepageExample = {
   name: 'Local Business',
-  description: 'A homepage pattern for shops, restaurants, clinics, and service-based locals.',
-  sections: [
-    'Hero',
-    'About',
-    'Services',
-    'Location & hours',
-    'Gallery',
-    'Reviews',
-    'Contact',
+  description:
+    'A contact-first homepage for businesses where location, hours, reviews, and trust matter.',
+  navLinks: [
+    { label: 'Services', href: '#services' },
+    { label: 'Service area', href: '#service-area' },
+    { label: 'Reviews', href: '#reviews' },
+    { label: 'Hours', href: '#hours' },
+    { label: 'Quote', href: '#quote' },
   ],
   hero: {
-    businessName: 'The Corner Cafe',
-    tagline: 'Fresh coffee, homemade pastries, and a place to slow down.',
+    eyebrow: 'Locally owned service business',
+    title:
+      'Fast, reliable service for homes and small businesses nearby.',
     description:
-      'A neighborhood cafe serving ethically sourced coffee, seasonal pastries, and light meals since 2015. Come in for the brew, stay for the atmosphere.',
-    address: '123 Main Street, Portland, OR',
-    phone: '(503) 555-0123',
-    primaryCta: { label: 'Order online', href: '/order' },
+      'A local business homepage pattern built around calls, quotes, service areas, reviews, and practical trust signals.',
+    primaryCta: { label: 'Request a quote', href: '#quote' },
+    secondaryCta: { label: 'Call now', href: 'tel:+15550142024' },
+    trustPoints: [
+      'Locally owned',
+      'Clear arrival windows',
+      'Upfront estimates',
+    ],
+    availabilityCard: {
+      title: "Today's availability",
+      status: 'Appointments available this week',
+      phone: '(555) 014-2024',
+      hours: 'Mon-Fri, 8:00 AM - 6:00 PM',
+      responseTime: 'Typical response: same business day',
+      serviceArea: 'Serving Franklin County and nearby communities',
+    },
   },
-  navLinks: [
-    { label: 'Menu', href: '/#menu' },
-    { label: 'Hours', href: '/#hours' },
-    { label: 'About', href: '/#about' },
-    { label: 'Contact', href: '/contact' },
+  quickContact: [
+    {
+      label: 'Call',
+      value: '(555) 014-2024',
+      href: 'tel:+15550142024',
+    },
+    {
+      label: 'Hours',
+      value: 'Mon-Fri, 8 AM - 6 PM',
+    },
+    {
+      label: 'Service area',
+      value: 'Columbus, OH',
+    },
+    {
+      label: 'Quotes',
+      value: 'Free estimates',
+      href: '#quote',
+    },
   ],
-  serviceAreas: {
-    label: 'SERVICE AREAS',
-    title: 'We serve these neighborhoods',
-    description: 'Free delivery within 3 miles. Pickup always available.',
-    areas: [
-      { name: 'Downtown', distance: '0.5 mi' },
-      { name: 'Pearl District', distance: '1.2 mi' },
-      { name: 'Alberta Arts', distance: '2.1 mi' },
-      { name: 'Mississippi', distance: '2.8 mi' },
-      { name: 'Sellwood', distance: '3.0 mi' },
+  services: [
+    {
+      title: 'Routine service visit',
+      description:
+        'Standard scheduled service for common maintenance, inspection, and small repair needs.',
+      startingAt: 'From $95',
+      duration: '60-90 minutes',
+      idealFor: 'Maintenance and small fixes',
+      cta: { label: 'Request visit', href: '#quote' },
+    },
+    {
+      title: 'Priority repair',
+      description:
+        'Faster scheduling for issues that need attention soon but are not emergencies.',
+      startingAt: 'Quote after review',
+      duration: 'Same or next business day when available',
+      idealFor: 'Leaks, outages, urgent issues',
+      cta: { label: 'Check availability', href: 'tel:+15550142024' },
+    },
+    {
+      title: 'Project estimate',
+      description:
+        'On-site or virtual estimate for larger projects, replacements, or multi-step work.',
+      startingAt: 'Free estimate',
+      duration: '30-45 minutes',
+      idealFor: 'Planning and budgeting',
+      cta: { label: 'Book estimate', href: '#quote' },
+    },
+    {
+      title: 'Recurring maintenance',
+      description:
+        'Scheduled service plan for customers who want fewer surprises and easier upkeep.',
+      startingAt: 'Custom plan',
+      duration: 'Monthly or seasonal',
+      idealFor: 'Homes and small businesses',
+      cta: { label: 'Ask about plans', href: '#quote' },
+    },
+  ],
+  serviceArea: {
+    title: 'Serving nearby communities',
+    description:
+      'Use this section to make your service area obvious before visitors call or request a quote.',
+    cities: [
+      'Columbus',
+      'Dublin',
+      'Westerville',
+      'Grove City',
+      'Hilliard',
+      'Worthington',
+      'Reynoldsburg',
+      'Gahanna',
     ],
+    note:
+      'Not sure if you are in range? Call or send your address and we will confirm.',
   },
-  hours: {
-    label: 'VISIT US',
-    title: 'Hours & contact',
+  gallery: [
+    {
+      title: 'Cleanup and repair',
+      before: 'Unclear issue, repeated callbacks, no documented fix.',
+      after:
+        'Issue identified, repaired, and documented for the customer.',
+    },
+    {
+      title: 'Maintenance visit',
+      before: 'Deferred upkeep and no regular schedule.',
+      after:
+        'Recurring service plan with seasonal reminders.',
+    },
+    {
+      title: 'Project estimate',
+      before:
+        'Customer unsure what the project would involve.',
+      after:
+        'Clear scope, options, and next-step quote.',
+    },
+  ],
+  reviews: [
+    {
+      rating: '★★★★★',
+      quote:
+        'They explained the issue clearly, showed up in the window they gave, and did not make the process weird.',
+      name: 'Megan R.',
+      location: 'Dublin',
+      service: 'Priority repair',
+    },
+    {
+      rating: '★★★★★',
+      quote:
+        'Easy quote, clean work, and good communication. That is basically all I want from a local service company.',
+      name: 'Daniel T.',
+      location: 'Westerville',
+      service: 'Project estimate',
+    },
+    {
+      rating: '★★★★★',
+      quote:
+        'We use them for recurring maintenance now because scheduling is simple and they actually follow up.',
+      name: 'Chris L.',
+      location: 'Grove City',
+      service: 'Recurring maintenance',
+    },
+  ],
+  contact: {
+    phone: '(555) 014-2024',
+    phoneHref: 'tel:+15550142024',
+    email: 'hello@examplelocal.com',
+    emailHref: 'mailto:hello@examplelocal.com',
+    address: '123 Main Street, Columbus, OH',
+    serviceArea: 'Franklin County area',
     hours: [
-      { day: 'Monday–Friday', hours: '7:00 AM – 6:00 PM' },
-      { day: 'Saturday', hours: '8:00 AM – 5:00 PM' },
-      { day: 'Sunday', hours: '8:00 AM – 4:00 PM' },
+      { label: 'Monday-Friday', value: '8:00 AM - 6:00 PM' },
+      { label: 'Saturday', value: 'By appointment' },
+      { label: 'Sunday', value: 'Closed' },
     ],
-    address: '123 Main Street, Portland, OR 97201',
-    phone: '(503) 555-0123',
-    email: 'hello@cornercafe.com',
+    note:
+      'Emergency availability depends on schedule and service type.',
   },
-  reviews: {
-    label: 'REVIEWS',
-    title: 'What our guests say',
-    reviews: [
-      { name: 'Sarah M.', rating: 5, text: 'Best latte in Portland. The staff remembers your name and order.', date: '2 weeks ago' },
-      { name: 'David K.', rating: 5, text: 'The pastries are made fresh every morning. The almond croissant is a must.', date: '1 month ago' },
-      { name: 'Emily R.', rating: 4, text: 'Great atmosphere for working remotely. Reliable wifi and plenty of outlets.', date: '3 weeks ago' },
-    ],
+  booking: {
+    urgent: {
+      title: 'Need help soon?',
+      description:
+        'Call first for time-sensitive issues. The team will confirm whether same-day service is available.',
+      cta: { label: 'Call now', href: 'tel:+15550142024' },
+    },
+    planned: {
+      title: 'Planning ahead?',
+      description:
+        'Use the quote request for estimates, recurring service, and non-urgent projects.',
+      cta: { label: 'Request quote', href: '#quote' },
+    },
   },
-  gallery: {
-    label: 'GALLERY',
-    title: 'A peek inside',
-    items: [
-      { alt: 'Interior seating' },
-      { alt: 'Coffee bar' },
-      { alt: 'Pastry display' },
-      { alt: 'Outdoor patio' },
-    ],
-  },
+  faq: [
+    {
+      question: 'Do you serve my area?',
+      answer:
+        'The service area list covers the main cities. If you are nearby, send your address and the team can confirm.',
+    },
+    {
+      question: 'Do you offer same-day service?',
+      answer:
+        'Same-day availability depends on the schedule and issue type. Call first for time-sensitive work.',
+    },
+    {
+      question: 'Can I get an estimate before booking?',
+      answer:
+        'Yes. Smaller services can use starting prices, while larger jobs usually need a short estimate.',
+    },
+    {
+      question: 'Do you work with small businesses?',
+      answer:
+        'Yes. The page structure works for residential customers, small offices, shops, and local facilities.',
+    },
+    {
+      question: 'What should I include in a quote request?',
+      answer:
+        'Include your address, photos if useful, the issue, and your preferred timing.',
+    },
+  ],
   footer: {
-    logoLabel: 'The Corner Cafe',
-    description: 'Fresh coffee and homemade pastries since 2015.',
+    logoLabel: 'Local Business Example',
+    description:
+      'A contact-first homepage pattern for local service businesses.',
     linkGroups: [
-      { title: 'Visit', links: [{ label: 'Menu', href: '/#menu' }, { label: 'Hours', href: '/#hours' }, { label: 'Location', href: '/#location' }] },
-      { title: 'Connect', links: [{ label: 'Instagram', href: 'https://instagram.com' }, { label: 'Facebook', href: 'https://facebook.com' }] },
-      { title: 'Legal', links: [{ label: 'Terms', href: '/terms' }, { label: 'Privacy', href: '/privacy' }] },
+      {
+        title: 'Page',
+        links: [
+          { label: 'Services', href: '#services' },
+          { label: 'Service area', href: '#service-area' },
+          { label: 'Quote', href: '#quote' },
+        ],
+      },
     ],
   },
 } as const

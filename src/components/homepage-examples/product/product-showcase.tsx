@@ -1,49 +1,70 @@
-interface ShowcaseFeature {
+import { PackageContentsPanel } from './package-contents-panel'
+
+interface PreviewBlock {
   readonly title: string
   readonly description: string
 }
 
 interface ProductShowcaseProps {
-  readonly label?: string
   readonly title: string
   readonly description?: string
-  readonly features: readonly ShowcaseFeature[]
+  readonly highlights: readonly string[]
+  readonly previewBlocks: readonly PreviewBlock[]
   readonly className?: string
 }
 
-export function ProductShowcase({ label, title, description, features, className = '' }: ProductShowcaseProps) {
+export function ProductShowcase({
+  title,
+  description,
+  highlights,
+  previewBlocks,
+  className = '',
+}: ProductShowcaseProps) {
   return (
-    <section className={`section-padding border-b border-[#E4E4E7] bg-[#F4F4F5] ${className}`}>
-      <div className='mx-auto max-w-6xl px-4 sm:px-6'>
-        <div className='mx-auto max-w-2xl text-center'>
-          {label && (
-            <h2
-              className='mb-6 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground'
+    <section id='preview' className={`section-padding bg-[#F4F4F5] px-4 sm:px-6 ${className}`}>
+      <div className='mx-auto max-w-6xl'>
+        <div className='grid gap-12 lg:grid-cols-2 lg:gap-16'>
+          {/* Left */}
+          <div>
+            <p
+              className='section-kicker'
               style={{ fontFamily: 'var(--font-geist-mono)' }}
             >
-              {label}
-            </h2>
-          )}
-          <h2 className='text-balance text-3xl font-semibold tracking-tight sm:text-4xl'>{title}</h2>
-          {description && (
-            <p className='mx-auto mt-4 max-w-2xl text-balance text-base leading-7 text-muted-foreground sm:text-lg'>
-              {description}
+              Preview
             </p>
-          )}
-        </div>
-        <div className='mt-16 grid gap-8 lg:grid-cols-2'>
-          <div className='rounded-3xl border border-[#E4E4E7] bg-white p-3 shadow-xl shadow-black/5'>
-            <div className='rounded-2xl border border-[#E4E4E7] bg-[#F4F4F5] p-8 flex items-center justify-center min-h-[300px]'>
-              <span className='text-sm font-medium text-muted-foreground'>Product detail image</span>
-            </div>
+            <h2 className='section-heading'>{title}</h2>
+            {description && (
+              <p className='section-description'>{description}</p>
+            )}
+
+            <ul className='mt-8 space-y-3'>
+              {highlights.map((item) => (
+                <li
+                  key={item}
+                  className='flex items-start gap-3 text-sm text-muted-foreground'
+                >
+                  <svg
+                    className='mt-0.5 h-4 w-4 shrink-0 text-foreground'
+                    viewBox='0 0 16 16'
+                    fill='none'
+                  >
+                    <path
+                      d='M3 8L6.5 11.5L13 4.5'
+                      stroke='currentColor'
+                      strokeWidth='1.5'
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                    />
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
-          <div className='flex flex-col justify-center gap-6'>
-            {features.map((feature) => (
-              <div key={feature.title}>
-                <h3 className='text-lg font-semibold'>{feature.title}</h3>
-                <p className='mt-2 text-base leading-7 text-muted-foreground'>{feature.description}</p>
-              </div>
-            ))}
+
+          {/* Right — file browser */}
+          <div className='flex items-center'>
+            <PackageContentsPanel previewBlocks={previewBlocks} />
           </div>
         </div>
       </div>

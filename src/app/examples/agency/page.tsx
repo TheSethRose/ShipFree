@@ -1,12 +1,13 @@
 import { ExampleHeader } from '@/components/homepage-examples/shared/example-header'
 import { ExampleFooter } from '@/components/homepage-examples/shared/example-footer'
-import { ExampleTestimonials } from '@/components/homepage-examples/shared/example-testimonials'
-import { ExampleFAQSection } from '@/components/homepage-examples/shared/example-faq-section'
-import { ExampleCTASection } from '@/components/homepage-examples/shared/example-cta-section'
 import { AgencyHero } from '@/components/homepage-examples/agency/agency-hero'
 import { ServicesGrid } from '@/components/homepage-examples/agency/services-grid'
-import { ProcessSection } from '@/components/homepage-examples/agency/process-section'
+import { EngagementModelsSection } from '@/components/homepage-examples/agency/engagement-models-section'
 import { ResultsSection } from '@/components/homepage-examples/agency/results-section'
+import { ProcessSection } from '@/components/homepage-examples/agency/process-section'
+import { CaseStudiesSection } from '@/components/homepage-examples/agency/case-studies-section'
+import { FitSection } from '@/components/homepage-examples/agency/fit-section'
+import { AgencyCTASection } from '@/components/homepage-examples/agency/agency-cta-section'
 import { agencyHomepageExample } from '@/data/homepage-examples/agency'
 
 export default function AgencyExamplePage() {
@@ -22,56 +23,57 @@ export default function AgencyExamplePage() {
       />
 
       <AgencyHero
-        headline={data.hero.headline}
-        subheadline={data.hero.subheadline}
+        eyebrow={data.hero.eyebrow}
+        title={data.hero.title}
+        description={data.hero.description}
         primaryCta={data.hero.primaryCta}
         secondaryCta={data.hero.secondaryCta}
+        bestFor={data.hero.bestFor}
+        snapshot={data.hero.snapshot}
       />
 
       <ServicesGrid
-        label={data.services.label}
-        title={data.services.title}
-        description={data.services.description}
-        services={data.services.services}
+        title='Services'
+        description='What we do, what you get, and what it looks like when it works.'
+        services={data.services}
       />
 
-      <ProcessSection
-        label={data.process.label}
-        title={data.process.title}
-        description={data.process.description}
-        steps={data.process.steps}
+      <EngagementModelsSection
+        title='Engagement models'
+        description='Choose the level of commitment that matches where you are.'
+        models={data.engagementModels}
       />
 
       <ResultsSection
-        label={data.results.label}
-        title={data.results.title}
-        results={data.results.results}
+        title='Outcomes'
+        description='What the work is designed to produce.'
+        results={data.results}
       />
 
-      <ExampleTestimonials
-        label={data.testimonials.label}
-        title={data.testimonials.title}
-        testimonials={data.testimonials.testimonials}
-        background='muted'
+      <ProcessSection
+        title='Process'
+        description='How we go from problem to shipped tool.'
+        steps={data.process}
       />
 
-      <ExampleFAQSection
-        label='FAQ'
-        title='Common questions'
-        questions={[
-          { question: 'What is your typical project timeline?', answer: 'Most brand and web projects take 6–12 weeks depending on scope. We will give you a clear timeline before we start.' },
-          { question: 'Do you work with startups?', answer: 'Absolutely. We have built brands and products for companies at every stage.' },
-          { question: 'What does a project cost?', answer: 'Every project is different. We will provide a detailed estimate after our initial discovery call.' },
-        ]}
-        background='white'
+      <CaseStudiesSection
+        title='Case studies'
+        description='Real client situations and what we built for them.'
+        caseStudies={data.caseStudies}
       />
 
-      <ExampleCTASection
-        label='START A PROJECT'
-        title='Ready to build something great?'
-        description='Tell us what you are working on and we will get back to you within 24 hours.'
-        primaryCta={{ label: 'Start a project', href: '/contact' }}
-        background='muted'
+      <FitSection
+        title='Is this a fit?'
+        goodFit={data.fit.goodFit}
+        badFit={data.fit.badFit}
+      />
+
+      <AgencyCTASection
+        label={data.cta.label}
+        title={data.cta.title}
+        description={data.cta.description}
+        primaryCta={data.cta.primaryCta}
+        secondaryCta={data.cta.secondaryCta}
       />
 
       <ExampleFooter

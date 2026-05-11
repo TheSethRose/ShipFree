@@ -1,13 +1,14 @@
 import { ExampleHeader } from '@/components/homepage-examples/shared/example-header'
 import { ExampleFooter } from '@/components/homepage-examples/shared/example-footer'
-import { ExampleFeatureGrid } from '@/components/homepage-examples/shared/example-feature-grid'
-import { ExampleFAQSection } from '@/components/homepage-examples/shared/example-faq-section'
-import { ExampleCTASection } from '@/components/homepage-examples/shared/example-cta-section'
 import { LocalBusinessHero } from '@/components/homepage-examples/local-business/local-business-hero'
+import { QuickContactBar } from '@/components/homepage-examples/local-business/quick-contact-bar'
+import { LocalServicesSection } from '@/components/homepage-examples/local-business/local-services-section'
 import { ServiceAreaSection } from '@/components/homepage-examples/local-business/service-area-section'
-import { HoursContactSection } from '@/components/homepage-examples/local-business/hours-contact-section'
+import { BeforeAfterGallery } from '@/components/homepage-examples/local-business/before-after-gallery'
 import { ReviewGrid } from '@/components/homepage-examples/local-business/review-grid'
-import { GalleryPreview } from '@/components/homepage-examples/local-business/gallery-preview'
+import { HoursContactSection } from '@/components/homepage-examples/local-business/hours-contact-section'
+import { EmergencyBookingSection } from '@/components/homepage-examples/local-business/emergency-booking-section'
+import { LocalFAQSection } from '@/components/homepage-examples/local-business/local-faq-section'
 import { localBusinessHomepageExample } from '@/data/homepage-examples/local-business'
 
 export default function LocalBusinessExamplePage() {
@@ -16,79 +17,69 @@ export default function LocalBusinessExamplePage() {
   return (
     <main className='min-h-screen bg-white'>
       <ExampleHeader
-        logoLabel={data.hero.businessName}
+        logoLabel='Local Business Example'
         navLinks={[...data.navLinks]}
         primaryCta={data.hero.primaryCta}
+        secondaryCta={data.hero.secondaryCta}
       />
 
       <LocalBusinessHero
-        businessName={data.hero.businessName}
-        tagline={data.hero.tagline}
+        eyebrow={data.hero.eyebrow}
+        title={data.hero.title}
         description={data.hero.description}
-        address={data.hero.address}
-        phone={data.hero.phone}
         primaryCta={data.hero.primaryCta}
+        secondaryCta={data.hero.secondaryCta}
+        trustPoints={data.hero.trustPoints}
+        availabilityCard={data.hero.availabilityCard}
       />
 
-      <ExampleFeatureGrid
-        label='MENU'
-        title='What we serve'
-        description='Fresh, seasonal, and made with care every day.'
-        features={[
-          { title: 'Espresso drinks', description: 'Single-origin and house blends, pulled fresh to order.' },
-          { title: 'Fresh pastries', description: 'Baked in-house every morning. Croissants, muffins, and seasonal specials.' },
-          { title: 'Light meals', description: 'Sandwiches, salads, and soups made with local ingredients.' },
-          { title: 'Retail beans', description: 'Take home a bag of our house roast or a seasonal single origin.' },
-        ]}
-        background='muted'
-        columns={2}
+      <QuickContactBar items={data.quickContact} />
+
+      <LocalServicesSection
+        title='Services'
+        description='What we offer, how long it takes, and how to book.'
+        services={data.services}
       />
 
       <ServiceAreaSection
-        label={data.serviceAreas.label}
-        title={data.serviceAreas.title}
-        description={data.serviceAreas.description}
-        areas={data.serviceAreas.areas}
+        title={data.serviceArea.title}
+        description={data.serviceArea.description}
+        cities={data.serviceArea.cities}
+        note={data.serviceArea.note}
       />
 
-      <GalleryPreview
-        label={data.gallery.label}
-        title={data.gallery.title}
-        items={data.gallery.items}
+      <BeforeAfterGallery
+        title='Work examples'
+        description='What customers experience before and after working with us.'
+        items={data.gallery}
       />
 
       <ReviewGrid
-        label={data.reviews.label}
-        title={data.reviews.title}
-        reviews={data.reviews.reviews}
+        title='Customer reviews'
+        description='Recent reviews from people in the service area.'
+        reviews={data.reviews}
       />
 
       <HoursContactSection
-        label={data.hours.label}
-        title={data.hours.title}
-        hours={data.hours.hours}
-        address={data.hours.address}
-        phone={data.hours.phone}
-        email={data.hours.email}
+        title='Hours and contact'
+        phone={data.contact.phone}
+        phoneHref={data.contact.phoneHref}
+        email={data.contact.email}
+        emailHref={data.contact.emailHref}
+        address={data.contact.address}
+        serviceArea={data.contact.serviceArea}
+        hours={data.contact.hours}
+        note={data.contact.note}
       />
 
-      <ExampleFAQSection
-        label='FAQ'
-        title='Questions & answers'
-        questions={[
-          { question: 'Do you take reservations?', answer: 'We do not take reservations, but seating is usually available. Peak times are 9–11 AM on weekends.' },
-          { question: 'Do you have vegan or gluten-free options?', answer: 'Yes. We always have vegan pastries and gluten-free options available. Ask our staff for today\'s selection.' },
-          { question: 'Is there wifi?', answer: 'Free wifi for all guests. Password is printed on your receipt.' },
-        ]}
-        background='white'
+      <EmergencyBookingSection
+        urgent={data.booking.urgent}
+        planned={data.booking.planned}
       />
 
-      <ExampleCTASection
-        label='VISIT US'
-        title='Come by this week.'
-        description='We would love to see you. Order ahead for pickup or stop in and stay a while.'
-        primaryCta={{ label: 'Order online', href: '/order' }}
-        background='muted'
+      <LocalFAQSection
+        title='Common questions'
+        questions={data.faq}
       />
 
       <ExampleFooter
