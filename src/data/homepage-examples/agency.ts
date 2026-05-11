@@ -70,7 +70,7 @@ export const agencyHomepageExample = {
     logoLabel: 'Studio One',
     description: 'Creative studio building brands that stand out.',
     linkGroups: [
-      { title: 'Services', links: [{ label: 'Brand Strategy', href: '/#services' }, { label: 'Product Design', href: '/#services' }, { label: 'Development', href: '/#services' }] },
+      { title: 'Services', links: [{ label: 'Brand Strategy', href: '/#brand' }, { label: 'Product Design', href: '/#design' }, { label: 'Development', href: '/#development' }] },
       { title: 'Company', links: [{ label: 'About', href: '/about' }, { label: 'Careers', href: '/careers' }, { label: 'Contact', href: '/contact' }] },
       { title: 'Legal', links: [{ label: 'Terms', href: '/terms' }, { label: 'Privacy', href: '/privacy' }] },
     ],

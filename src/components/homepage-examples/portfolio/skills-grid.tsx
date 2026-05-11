@@ -1,52 +1,42 @@
-interface Skill {
-  readonly name: string
-  readonly level?: string
-}
-
 interface SkillCategory {
   readonly category: string
-  readonly skills: readonly Skill[]
+  readonly items: readonly string[]
 }
 
 interface SkillsGridProps {
-  readonly label?: string
   readonly title: string
   readonly description?: string
   readonly categories: readonly SkillCategory[]
   readonly className?: string
 }
 
-export function SkillsGrid({ label, title, description, categories, className = '' }: SkillsGridProps) {
+export function SkillsGrid({
+  title,
+  description,
+  categories,
+  className = '',
+}: SkillsGridProps) {
   return (
-    <section className={`section-padding border-b border-[#E4E4E7] bg-white ${className}`}>
-      <div className='mx-auto max-w-6xl px-4 sm:px-6'>
-        <div className='mx-auto max-w-2xl text-center'>
-          {label && (
-            <h2
-              className='mb-6 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground'
-              style={{ fontFamily: 'var(--font-geist-mono)' }}
-            >
-              {label}
-            </h2>
-          )}
-          <h2 className='text-balance text-3xl font-semibold tracking-tight sm:text-4xl'>{title}</h2>
+    <section id='skills' className={`section-padding bg-[#F4F4F5] px-4 sm:px-6 ${className}`}>
+      <div className='mx-auto max-w-6xl'>
+        <div className='max-w-2xl'>
+          <h2 className='section-heading'>{title}</h2>
           {description && (
-            <p className='mx-auto mt-4 max-w-2xl text-balance text-base leading-7 text-muted-foreground sm:text-lg'>
-              {description}
-            </p>
+            <p className='section-description'>{description}</p>
           )}
         </div>
-        <div className='mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3'>
+
+        <div className='mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4'>
           {categories.map((cat) => (
             <div key={cat.category} className='marketing-card'>
-              <h3 className='text-lg font-semibold'>{cat.category}</h3>
+              <h3 className='text-sm font-semibold'>{cat.category}</h3>
               <div className='mt-4 flex flex-wrap gap-2'>
-                {cat.skills.map((skill) => (
+                {cat.items.map((item) => (
                   <span
-                    key={skill.name}
+                    key={item}
                     className='rounded-full border border-[#E4E4E7] bg-[#F4F4F5] px-3 py-1 text-sm font-medium'
                   >
-                    {skill.name}
+                    {item}
                   </span>
                 ))}
               </div>

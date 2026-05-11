@@ -32,7 +32,7 @@ export function ExampleFooter({ logoLabel, description, linkGroups, className = 
               </h3>
               <ul className='space-y-3'>
                 {group.links.map((link) => (
-                  <li key={link.href}>
+                  <li key={link.label}>
                     <Link
                       href={link.href}
                       className='text-sm font-medium text-muted-foreground transition-colors duration-200 ease-in-out hover:text-foreground'

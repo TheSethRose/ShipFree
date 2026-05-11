@@ -1,34 +1,63 @@
 # Homepage Examples
 
-## What this is
+## Overview
 
-This folder contains **alternate homepage patterns** for different site types. It is a sandbox area where new homepage designs can be built, previewed, and tested without touching the current production homepage.
+This folder contains **four complete alternate homepage patterns** built with the same ShipFree design system. Each example is a fully composed page using shared and category-specific components.
 
-## Why the current homepage is not changed
+The production homepage at `/` is already the SaaS/starter-kit example. These examples cover other site types.
 
-The existing homepage at `/` is the primary ShipFree landing page. It is stable, tested, and optimized. The examples area exists so that:
+## Available examples
 
-- New homepage patterns can be developed in isolation.
-- Different site types (SaaS, portfolio, agency, etc.) can have tailored homepages.
-- Experiments can happen without risk to the main site.
-- Users can fork the repo and swap in the homepage that fits their product.
+| Example | Best for | Route |
+|---------|----------|-------|
+| **Portfolio** | Designers, developers, creatives | `/examples/portfolio` |
+| **Agency** | Creative studios, consultancies | `/examples/agency` |
+| **Local Business** | Shops, restaurants, clinics | `/examples/local-business` |
+| **Product** | Physical products, gadgets, launches | `/examples/product` |
 
-## How to preview examples
-
-Run the dev server and visit:
+## Preview routes
 
 - `/examples` — Overview of all homepage patterns
-- `/examples/saas` — SaaS homepage scaffold
-- `/examples/portfolio` — Portfolio homepage scaffold
-- `/examples/agency` — Agency homepage scaffold
-- `/examples/local-business` — Local business homepage scaffold
-- `/examples/product` — Product homepage scaffold
+- `/examples/portfolio` — Complete portfolio homepage
+- `/examples/agency` — Complete agency homepage
+- `/examples/local-business` — Complete local business homepage
+- `/examples/product` — Complete product homepage
+
+## How to use one as your real homepage
+
+1. Pick the example closest to your product.
+2. Copy the imports and JSX from `src/app/examples/{type}/page.tsx` into `src/app/page.tsx`.
+3. Keep or customize the related data file in `src/data/homepage-examples/{type}.ts`.
+4. Delete unused example categories (see below).
+
+## How to delete one category
+
+Example: removing the portfolio example.
+
+```bash
+rm -rf src/app/examples/portfolio
+rm -rf src/components/homepage-examples/portfolio
+rm src/data/homepage-examples/portfolio.ts
+```
+
+Then remove the portfolio card from `src/app/examples/page.tsx`.
+
+## How to delete all examples
+
+```bash
+rm -rf src/app/examples
+rm -rf src/components/homepage-examples
+rm -rf src/data/homepage-examples
+rm docs/homepage-examples.mdx
+```
+
+No other files depend on these. The main homepage at `/` remains untouched.
 
 ## Component organization
 
 ### Shared components
 
-Located in `src/components/homepage-examples/shared/`. These are reusable across all example types:
+Located in `src/components/homepage-examples/shared/`:
 
 - `example-header.tsx` — Generic responsive header with nav and CTAs
 - `example-footer.tsx` — Generic footer with link groups
@@ -41,49 +70,17 @@ Located in `src/components/homepage-examples/shared/`. These are reusable across
 
 ### Category-specific components
 
-Located in `src/components/homepage-examples/{type}/`. These are tailored to each site type:
-
-**SaaS:** `saas-hero`, `saas-dashboard-preview`, `saas-integrations`, `saas-pricing-preview`
 **Portfolio:** `portfolio-hero`, `project-grid`, `skills-grid`, `experience-timeline`
 **Agency:** `agency-hero`, `services-grid`, `process-section`, `results-section`
 **Local Business:** `local-business-hero`, `service-area-section`, `hours-contact-section`, `review-grid`, `gallery-preview`
 **Product:** `product-hero`, `product-showcase`, `license-section`, `product-pricing`
 
-## Data file responsibility
+## Data files
 
-Each example has its own data file in `src/data/homepage-examples/{type}.ts`. These contain:
+Each example has its own data file in `src/data/homepage-examples/{type}.ts`. These are the single source of truth for content. Components accept data via props.
 
-- Hero content, CTAs, and trust points
-- Navigation links
-- Feature lists, testimonials, FAQs
-- Pricing tiers, process steps, project lists
-- Footer link groups
+## Design guidance
 
-Components accept data via props. Data files are the single source of truth for each example.
-
-## Phase progression
-
-### Phase 1 (complete)
-Scaffold structure: routes, data files, docs, and placeholder pages.
-
-### Phase 2 (current)
-Build shared primitives and category-specific components. Components compile and accept props. Example routes may still show scaffold content.
-
-### Phase 3 (next)
-Compose final example pages by wiring components to data. Each `/examples/{type}` page renders a complete homepage using its components and data.
-
-### Phase 4
-Add a homepage switcher or config so users can select which homepage to render at `/`.
-
-## How to delete the examples cleanly
-
-If you do not need the examples, delete these folders and files:
-
-```bash
-rm -rf src/app/examples
-rm -rf src/components/homepage-examples
-rm -rf src/data/homepage-examples
-rm docs/homepage-examples.mdx
-```
-
-No other files depend on these. The main homepage at `/` will remain untouched.
+- Use existing utilities from `globals.css`: `.section-padding`, `.section-kicker`, `.section-heading`, `.section-description`, `.marketing-card`, `.card-description`.
+- Keep pages explicit. Do not convert this into a config-driven homepage builder.
+- The design language is restrained: `bg-white` / `bg-[#F4F4F5]` alternation, `border-[#E4E4E7]`, `rounded-2xl` cards, monochrome palette.

@@ -1,50 +1,84 @@
-import Link from 'next/link'
-import { ArrowLeft } from 'lucide-react'
-
+import { ExampleHeader } from '@/components/homepage-examples/shared/example-header'
+import { ExampleFooter } from '@/components/homepage-examples/shared/example-footer'
+import { ExampleTestimonials } from '@/components/homepage-examples/shared/example-testimonials'
+import { ExampleFAQSection } from '@/components/homepage-examples/shared/example-faq-section'
+import { ExampleCTASection } from '@/components/homepage-examples/shared/example-cta-section'
+import { AgencyHero } from '@/components/homepage-examples/agency/agency-hero'
+import { ServicesGrid } from '@/components/homepage-examples/agency/services-grid'
+import { ProcessSection } from '@/components/homepage-examples/agency/process-section'
+import { ResultsSection } from '@/components/homepage-examples/agency/results-section'
 import { agencyHomepageExample } from '@/data/homepage-examples/agency'
 
 export default function AgencyExamplePage() {
-  const { name, description, sections } = agencyHomepageExample
+  const data = agencyHomepageExample
 
   return (
     <main className='min-h-screen bg-white'>
-      <div className='h-16 border-b border-[#E4E4E7] bg-[#F4F4F5]/90 backdrop-blur-xl' />
+      <ExampleHeader
+        logoLabel={data.footer.logoLabel}
+        navLinks={[...data.navLinks]}
+        primaryCta={data.hero.primaryCta}
+        secondaryCta={data.hero.secondaryCta}
+      />
 
-      <section className='section-padding px-4 sm:px-6'>
-        <div className='mx-auto max-w-6xl'>
-          <Link
-            href='/examples'
-            className='mb-8 inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground'
-          >
-            <ArrowLeft className='h-4 w-4' />
-            Back to examples
-          </Link>
+      <AgencyHero
+        headline={data.hero.headline}
+        subheadline={data.hero.subheadline}
+        primaryCta={data.hero.primaryCta}
+        secondaryCta={data.hero.secondaryCta}
+      />
 
-          <div className='mx-auto max-w-2xl'>
-            <h1 className='section-heading'>{name} homepage</h1>
-            <p className='section-description text-left'>{description}</p>
+      <ServicesGrid
+        label={data.services.label}
+        title={data.services.title}
+        description={data.services.description}
+        services={data.services.services}
+      />
 
-            <div className='mt-12 rounded-2xl border border-[#E4E4E7] bg-[#F4F4F5] p-6'>
-              <h2 className='mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground'>
-                Planned sections
-              </h2>
-              <ol className='space-y-2'>
-                {sections.map((section, index) => (
-                  <li
-                    key={section}
-                    className='flex items-center gap-3 text-base text-muted-foreground'
-                  >
-                    <span className='flex h-6 w-6 items-center justify-center rounded-full bg-white text-xs font-semibold shadow-sm'>
-                      {index + 1}
-                    </span>
-                    {section}
-                  </li>
-                ))}
-              </ol>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ProcessSection
+        label={data.process.label}
+        title={data.process.title}
+        description={data.process.description}
+        steps={data.process.steps}
+      />
+
+      <ResultsSection
+        label={data.results.label}
+        title={data.results.title}
+        results={data.results.results}
+      />
+
+      <ExampleTestimonials
+        label={data.testimonials.label}
+        title={data.testimonials.title}
+        testimonials={data.testimonials.testimonials}
+        background='muted'
+      />
+
+      <ExampleFAQSection
+        label='FAQ'
+        title='Common questions'
+        questions={[
+          { question: 'What is your typical project timeline?', answer: 'Most brand and web projects take 6–12 weeks depending on scope. We will give you a clear timeline before we start.' },
+          { question: 'Do you work with startups?', answer: 'Absolutely. We have built brands and products for companies at every stage.' },
+          { question: 'What does a project cost?', answer: 'Every project is different. We will provide a detailed estimate after our initial discovery call.' },
+        ]}
+        background='white'
+      />
+
+      <ExampleCTASection
+        label='START A PROJECT'
+        title='Ready to build something great?'
+        description='Tell us what you are working on and we will get back to you within 24 hours.'
+        primaryCta={{ label: 'Start a project', href: '/contact' }}
+        background='muted'
+      />
+
+      <ExampleFooter
+        logoLabel={data.footer.logoLabel}
+        description={data.footer.description}
+        linkGroups={[...data.footer.linkGroups]}
+      />
     </main>
   )
 }

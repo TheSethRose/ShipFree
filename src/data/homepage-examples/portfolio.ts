@@ -1,76 +1,179 @@
 export const portfolioHomepageExample = {
   name: 'Portfolio',
-  description: 'A homepage pattern for designers, developers, and creatives showcasing work.',
-  sections: [
-    'Hero',
-    'Selected work',
-    'About',
-    'Skills',
-    'Process',
-    'Testimonials',
-    'Contact',
+  description: 'A work-first homepage for a developer, designer, consultant, or creative professional.',
+  navLinks: [
+    { label: 'Work', href: '#work' },
+    { label: 'Case studies', href: '#case-studies' },
+    { label: 'Skills', href: '#skills' },
+    { label: 'Experience', href: '#experience' },
+    { label: 'Contact', href: '#contact' },
   ],
   hero: {
-    name: 'Jordan Lee',
-    role: 'Product Designer & Developer',
-    tagline: 'I design and build digital products that people love to use. Based in San Francisco, working with teams worldwide.',
-    primaryCta: { label: 'View my work', href: '/#work' },
-    secondaryCta: { label: 'Get in touch', href: '/contact' },
+    eyebrow: 'Independent product builder',
+    title: 'I design and build useful software for real business problems.',
+    description:
+      'A portfolio homepage for developers, designers, and consultants who want to show shipped work, not just list skills.',
+    location: 'Remote / US-based',
+    role: 'Product engineer',
+    focus: 'SaaS, automation, and internal tools',
+    availability: 'Available for select projects',
+    primaryCta: { label: 'View selected work', href: '#work' },
+    secondaryCta: { label: 'Contact me', href: '#contact' },
+    knownFor: [
+      'Clean product UX',
+      'Production-ready builds',
+      'Fast technical discovery',
+    ],
   },
-  navLinks: [
-    { label: 'Work', href: '/#work' },
-    { label: 'About', href: '/#about' },
-    { label: 'Skills', href: '/#skills' },
-    { label: 'Contact', href: '/contact' },
+  projects: [
+    {
+      title: 'Client Portal Redesign',
+      type: 'Product UX / Frontend',
+      description:
+        'Reworked a confusing client portal into a task-focused dashboard with clearer navigation and faster status visibility.',
+      role: 'UX direction, React implementation',
+      stack: ['Next.js', 'TypeScript', 'Tailwind', 'PostgreSQL'],
+      outcome:
+        'Reduced support questions by making account status and next actions obvious.',
+      href: '#',
+      linkLabel: 'View case study',
+    },
+    {
+      title: 'Automation Console',
+      type: 'Internal tool',
+      description:
+        'Built a lightweight operations console for reviewing requests, triggering workflows, and tracking failed jobs.',
+      role: 'Full-stack build',
+      stack: ['React', 'API routes', 'Queue jobs', 'Audit logs'],
+      outcome:
+        'Gave operators one place to see what broke and retry safely.',
+      href: '#',
+      linkLabel: 'View project',
+    },
+    {
+      title: 'Founder Landing Page',
+      type: 'Marketing site',
+      description:
+        'Designed and shipped a clear landing page for a solo founder validating a niche B2B product.',
+      role: 'Messaging, design, implementation',
+      stack: ['Next.js', 'MDX', 'Stripe', 'Analytics'],
+      outcome:
+        'Turned a vague product idea into a page people could understand in under 10 seconds.',
+      href: '#',
+      linkLabel: 'View writeup',
+    },
   ],
-  projects: {
-    label: 'SELECTED WORK',
-    title: 'Projects I am proud of',
-    description: 'A mix of product design, front-end development, and brand work for startups and established companies.',
-    projects: [
-      { title: 'Finova Banking', category: 'Product Design', description: 'Redesigned the mobile banking experience for a neobank serving 2M users.' },
-      { title: 'GreenCart', category: 'E-commerce', description: 'Built a sustainable grocery platform with real-time inventory and delivery tracking.' },
-      { title: 'HealthTrack', category: 'Healthcare', description: 'Designed a patient portal that reduced appointment no-shows by 35%.' },
-      { title: 'CloudSync', category: 'SaaS', description: 'Created the brand identity and marketing site for a developer tools startup.' },
-      { title: 'UrbanEats', category: 'Mobile App', description: 'Designed and developed a food discovery app with AR restaurant previews.' },
-      { title: 'TaskFlow', category: 'Productivity', description: 'Redesigned the onboarding flow, increasing activation by 28%.' },
+  caseStudies: [
+    {
+      title: 'Untangling a messy onboarding flow',
+      problem:
+        'Users were abandoning setup because the product asked too many questions before showing value.',
+      approach:
+        'Moved setup into progressive steps, clarified defaults, and gave users a useful first screen faster.',
+      result:
+        'The flow became easier to finish and easier for the team to explain.',
+    },
+    {
+      title: 'Turning manual ops into a dashboard',
+      problem:
+        'A team was tracking work across spreadsheets, Slack threads, and one-off scripts.',
+      approach:
+        'Mapped the recurring decisions, built a small internal interface, and added retry-safe actions.',
+      result:
+        'The team got a single operating view instead of chasing state across tools.',
+    },
+    {
+      title: 'Making a technical product legible',
+      problem:
+        'The product was powerful, but the homepage sounded like internal architecture notes.',
+      approach:
+        'Reframed the copy around user outcomes, simplified the page structure, and added concrete examples.',
+      result:
+        'Visitors could understand the offer without needing a sales call.',
+    },
+  ],
+  skills: [
+    {
+      category: 'Product Engineering',
+      items: ['Next.js', 'React', 'TypeScript', 'APIs', 'Dashboards'],
+    },
+    {
+      category: 'UX Systems',
+      items: ['Information architecture', 'Design systems', 'Interaction cleanup'],
+    },
+    {
+      category: 'Automation',
+      items: ['Workflow mapping', 'Internal tools', 'AI-assisted processes'],
+    },
+    {
+      category: 'Delivery',
+      items: ['Scoping', 'Technical discovery', 'Documentation', 'Handoff'],
+    },
+  ],
+  experience: [
+    {
+      period: 'Recent',
+      role: 'Independent product work',
+      company: 'Client and internal projects',
+      description:
+        'Building focused web apps, automation systems, and landing pages for practical business workflows.',
+    },
+    {
+      period: 'Previous',
+      role: 'Senior software engineer',
+      company: 'Enterprise teams',
+      description:
+        'Worked across internal platforms, integrations, support tooling, and production delivery.',
+    },
+    {
+      period: 'Earlier',
+      role: 'Frontend and full-stack developer',
+      company: 'Product teams',
+      description:
+        'Shipped user-facing interfaces, admin systems, and operational dashboards.',
+    },
+  ],
+  now: {
+    title: 'Now and availability',
+    focus: [
+      'Building focused product interfaces',
+      'Improving messy SaaS onboarding',
+      'Turning internal workflows into usable tools',
+    ],
+    availableFor: [
+      'Landing page builds',
+      'SaaS dashboard UX',
+      'Internal tool design/build',
+      'Technical product cleanup',
+    ],
+    notAvailableFor: [
+      'Vague idea calls with no owner',
+      'Spec-free rebuilds',
+      'Pixel-perfect clone requests',
     ],
   },
-  skills: {
-    label: 'SKILLS',
-    title: 'Tools and technologies',
-    description: 'I work across the full product lifecycle, from research to deployment.',
-    categories: [
-      { category: 'Design', skills: [{ name: 'Figma' }, { name: 'Sketch' }, { name: 'Prototyping' }, { name: 'User Research' }] },
-      { category: 'Development', skills: [{ name: 'React' }, { name: 'TypeScript' }, { name: 'Next.js' }, { name: 'Tailwind CSS' }] },
-      { category: 'Strategy', skills: [{ name: 'Product Strategy' }, { name: 'Growth' }, { name: 'Analytics' }, { name: 'A/B Testing' }] },
-    ],
-  },
-  experience: {
-    label: 'EXPERIENCE',
-    title: 'Where I have worked',
-    items: [
-      { role: 'Senior Product Designer', company: 'Stripe', period: '2022–Present', description: 'Leading design for the developer dashboard and API documentation experience.' },
-      { role: 'Product Designer', company: 'Figma', period: '2019–2022', description: 'Worked on community features and the design system infrastructure.' },
-      { role: 'Frontend Developer', company: 'Vercel', period: '2017–2019', description: 'Built marketing sites and internal tools using Next.js and React.' },
-    ],
-  },
-  testimonials: {
-    label: 'TESTIMONIALS',
-    title: 'What people say',
-    testimonials: [
-      { quote: 'Jordan brought both design craft and technical execution to our team. A rare combination.', name: 'Emily Park', role: 'VP Product, Stripe' },
-      { quote: 'The best designer I have worked with. Every detail was considered, and the results showed.', name: 'David Kim', role: 'CEO, GreenCart' },
-      { quote: 'Delivered on time, communicated clearly, and the work exceeded expectations.', name: 'Rachel Chen', role: 'Founder, HealthTrack' },
-    ],
+  cta: {
+    label: 'Work together',
+    title:
+      'Have a messy product flow or internal tool that needs to become usable?',
+    description:
+      'Send a short note with what exists, what is broken, and what needs to happen next.',
+    primaryCta: { label: 'Start a project', href: '#contact' },
+    secondaryCta: { label: 'Email directly', href: 'mailto:hello@example.com' },
   },
   footer: {
-    logoLabel: 'Jordan Lee',
-    description: 'Product Designer & Developer based in San Francisco.',
+    logoLabel: 'Portfolio Example',
+    description:
+      'A work-first homepage pattern for independent builders and technical creatives.',
     linkGroups: [
-      { title: 'Work', links: [{ label: 'Projects', href: '/#work' }, { label: 'Process', href: '/#process' }] },
-      { title: 'Connect', links: [{ label: 'Email', href: 'mailto:hello@jordanlee.dev' }, { label: 'GitHub', href: 'https://github.com' }] },
-      { title: 'Legal', links: [{ label: 'Privacy', href: '/privacy' }] },
+      {
+        title: 'Page',
+        links: [
+          { label: 'Work', href: '#work' },
+          { label: 'Case studies', href: '#case-studies' },
+          { label: 'Contact', href: '#contact' },
+        ],
+      },
     ],
   },
 } as const

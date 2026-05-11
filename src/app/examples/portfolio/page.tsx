@@ -1,50 +1,80 @@
-import Link from 'next/link'
-import { ArrowLeft } from 'lucide-react'
-
+import { ExampleHeader } from '@/components/homepage-examples/shared/example-header'
+import { ExampleFooter } from '@/components/homepage-examples/shared/example-footer'
+import { PortfolioHero } from '@/components/homepage-examples/portfolio/portfolio-hero'
+import { SelectedWorkSection } from '@/components/homepage-examples/portfolio/selected-work-section'
+import { CaseStudyPreviewSection } from '@/components/homepage-examples/portfolio/case-study-preview-section'
+import { SkillsGrid } from '@/components/homepage-examples/portfolio/skills-grid'
+import { ExperienceTimeline } from '@/components/homepage-examples/portfolio/experience-timeline'
+import { NowAvailableSection } from '@/components/homepage-examples/portfolio/now-available-section'
+import { ContactCTASection } from '@/components/homepage-examples/portfolio/contact-cta-section'
 import { portfolioHomepageExample } from '@/data/homepage-examples/portfolio'
 
 export default function PortfolioExamplePage() {
-  const { name, description, sections } = portfolioHomepageExample
+  const data = portfolioHomepageExample
 
   return (
     <main className='min-h-screen bg-white'>
-      <div className='h-16 border-b border-[#E4E4E7] bg-[#F4F4F5]/90 backdrop-blur-xl' />
+      <ExampleHeader
+        logoLabel='Portfolio'
+        navLinks={[...data.navLinks]}
+        primaryCta={data.hero.primaryCta}
+        secondaryCta={data.hero.secondaryCta}
+      />
 
-      <section className='section-padding px-4 sm:px-6'>
-        <div className='mx-auto max-w-6xl'>
-          <Link
-            href='/examples'
-            className='mb-8 inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground'
-          >
-            <ArrowLeft className='h-4 w-4' />
-            Back to examples
-          </Link>
+      <PortfolioHero
+        eyebrow={data.hero.eyebrow}
+        title={data.hero.title}
+        description={data.hero.description}
+        location={data.hero.location}
+        role={data.hero.role}
+        focus={data.hero.focus}
+        availability={data.hero.availability}
+        knownFor={data.hero.knownFor}
+        primaryCta={data.hero.primaryCta}
+        secondaryCta={data.hero.secondaryCta}
+      />
 
-          <div className='mx-auto max-w-2xl'>
-            <h1 className='section-heading'>{name} homepage</h1>
-            <p className='section-description text-left'>{description}</p>
+      <SelectedWorkSection
+        title='Selected work'
+        description='Recent projects with role, stack, and outcomes.'
+        projects={data.projects}
+      />
 
-            <div className='mt-12 rounded-2xl border border-[#E4E4E7] bg-[#F4F4F5] p-6'>
-              <h2 className='mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground'>
-                Planned sections
-              </h2>
-              <ol className='space-y-2'>
-                {sections.map((section, index) => (
-                  <li
-                    key={section}
-                    className='flex items-center gap-3 text-base text-muted-foreground'
-                  >
-                    <span className='flex h-6 w-6 items-center justify-center rounded-full bg-white text-xs font-semibold shadow-sm'>
-                      {index + 1}
-                    </span>
-                    {section}
-                  </li>
-                ))}
-              </ol>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CaseStudyPreviewSection
+        title='How the work gets solved'
+        caseStudies={data.caseStudies}
+      />
+
+      <SkillsGrid
+        title='Skills and capabilities'
+        categories={data.skills}
+      />
+
+      <ExperienceTimeline
+        title='Experience'
+        items={data.experience}
+      />
+
+      <NowAvailableSection
+        title={data.now.title}
+        focus={data.now.focus}
+        availableFor={data.now.availableFor}
+        notAvailableFor={data.now.notAvailableFor}
+      />
+
+      <ContactCTASection
+        label={data.cta.label}
+        title={data.cta.title}
+        description={data.cta.description}
+        primaryCta={data.cta.primaryCta}
+        secondaryCta={data.cta.secondaryCta}
+      />
+
+      <ExampleFooter
+        logoLabel={data.footer.logoLabel}
+        description={data.footer.description}
+        linkGroups={[...data.footer.linkGroups]}
+      />
     </main>
   )
 }

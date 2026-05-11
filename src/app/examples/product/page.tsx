@@ -1,50 +1,90 @@
-import Link from 'next/link'
-import { ArrowLeft } from 'lucide-react'
-
+import { ExampleHeader } from '@/components/homepage-examples/shared/example-header'
+import { ExampleFooter } from '@/components/homepage-examples/shared/example-footer'
+import { ExampleFeatureGrid } from '@/components/homepage-examples/shared/example-feature-grid'
+import { ExampleTestimonials } from '@/components/homepage-examples/shared/example-testimonials'
+import { ExampleFAQSection } from '@/components/homepage-examples/shared/example-faq-section'
+import { ExampleCTASection } from '@/components/homepage-examples/shared/example-cta-section'
+import { ProductHero } from '@/components/homepage-examples/product/product-hero'
+import { ProductShowcase } from '@/components/homepage-examples/product/product-showcase'
+import { LicenseSection } from '@/components/homepage-examples/product/license-section'
+import { ProductPricing } from '@/components/homepage-examples/product/product-pricing'
 import { productHomepageExample } from '@/data/homepage-examples/product'
 
 export default function ProductExamplePage() {
-  const { name, description, sections } = productHomepageExample
+  const data = productHomepageExample
 
   return (
     <main className='min-h-screen bg-white'>
-      <div className='h-16 border-b border-[#E4E4E7] bg-[#F4F4F5]/90 backdrop-blur-xl' />
+      <ExampleHeader
+        logoLabel={data.footer.logoLabel}
+        navLinks={[...data.navLinks]}
+        primaryCta={data.hero.primaryCta}
+        secondaryCta={data.hero.secondaryCta}
+      />
 
-      <section className='section-padding px-4 sm:px-6'>
-        <div className='mx-auto max-w-6xl'>
-          <Link
-            href='/examples'
-            className='mb-8 inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground'
-          >
-            <ArrowLeft className='h-4 w-4' />
-            Back to examples
-          </Link>
+      <ProductHero
+        productName={data.hero.productName}
+        tagline={data.hero.tagline}
+        description={data.hero.description}
+        primaryCta={data.hero.primaryCta}
+        secondaryCta={data.hero.secondaryCta}
+        trustPoints={data.hero.trustPoints}
+      />
 
-          <div className='mx-auto max-w-2xl'>
-            <h1 className='section-heading'>{name} homepage</h1>
-            <p className='section-description text-left'>{description}</p>
+      <ProductShowcase
+        label={data.showcase.label}
+        title={data.showcase.title}
+        description={data.showcase.description}
+        features={data.showcase.features}
+      />
 
-            <div className='mt-12 rounded-2xl border border-[#E4E4E7] bg-[#F4F4F5] p-6'>
-              <h2 className='mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground'>
-                Planned sections
-              </h2>
-              <ol className='space-y-2'>
-                {sections.map((section, index) => (
-                  <li
-                    key={section}
-                    className='flex items-center gap-3 text-base text-muted-foreground'
-                  >
-                    <span className='flex h-6 w-6 items-center justify-center rounded-full bg-white text-xs font-semibold shadow-sm'>
-                      {index + 1}
-                    </span>
-                    {section}
-                  </li>
-                ))}
-              </ol>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ExampleFeatureGrid
+        label={data.features.label}
+        title={data.features.title}
+        features={data.features.features}
+        background='muted'
+      />
+
+      <LicenseSection
+        label={data.license.label}
+        title={data.license.title}
+        tiers={data.license.tiers}
+      />
+
+      <ProductPricing
+        label={data.pricing.label}
+        title={data.pricing.title}
+        tiers={data.pricing.tiers}
+      />
+
+      <ExampleTestimonials
+        label={data.reviews.label}
+        title={data.reviews.title}
+        testimonials={data.reviews.testimonials}
+        background='muted'
+      />
+
+      <ExampleFAQSection
+        label={data.faq.label}
+        title={data.faq.title}
+        questions={data.faq.questions}
+        background='white'
+      />
+
+      <ExampleCTASection
+        label={data.cta.label}
+        title={data.cta.title}
+        description={data.cta.description}
+        primaryCta={data.cta.primaryCta}
+        secondaryCta={data.cta.secondaryCta}
+        background='muted'
+      />
+
+      <ExampleFooter
+        logoLabel={data.footer.logoLabel}
+        description={data.footer.description}
+        linkGroups={[...data.footer.linkGroups]}
+      />
     </main>
   )
 }

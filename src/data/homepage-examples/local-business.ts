@@ -73,7 +73,7 @@ export const localBusinessHomepageExample = {
     description: 'Fresh coffee and homemade pastries since 2015.',
     linkGroups: [
       { title: 'Visit', links: [{ label: 'Menu', href: '/#menu' }, { label: 'Hours', href: '/#hours' }, { label: 'Location', href: '/#location' }] },
-      { title: 'Connect', links: [{ label: 'Instagram', href: '#' }, { label: 'Facebook', href: '#' }] },
+      { title: 'Connect', links: [{ label: 'Instagram', href: 'https://instagram.com' }, { label: 'Facebook', href: 'https://facebook.com' }] },
       { title: 'Legal', links: [{ label: 'Terms', href: '/terms' }, { label: 'Privacy', href: '/privacy' }] },
     ],
   },
