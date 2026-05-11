@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { generateMetadata as generateSEOMetadata } from '@/lib/seo'
-import Navbar from '../(site)/navbar'
-import Footer from '../(site)/footer'
+import { SiteHeader } from '@/components/sections/site-header'
+import { SiteFooter } from '@/components/sections/site-footer'
 import { GridLayout } from '../(site)/grid-layout'
 
 export const metadata: Metadata = generateSEOMetadata({
@@ -13,7 +13,7 @@ export const metadata: Metadata = generateSEOMetadata({
 export default async function TermsPage() {
   return (
     <GridLayout>
-      <Navbar />
+      <SiteHeader />
       <main className='min-h-screen pt-14'>
         <div className='mx-auto max-w-4xl px-4 py-16 sm:px-6'>
           <h1 className='mb-4 text-4xl font-semibold tracking-tight'>Terms of Service</h1>
@@ -86,7 +86,7 @@ export default async function TermsPage() {
           </div>
         </div>
       </main>
-      <Footer />
+      <SiteFooter />
     </GridLayout>
   )
 }

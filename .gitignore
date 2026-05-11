@@ -41,10 +41,12 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-opencode.json
-
 # migrations
 /migrations
 # Sentry Config File
 .env.sentry-build-plugin
 .developer/
+
+# custom
+opencode.json
+repomix-*.xml
