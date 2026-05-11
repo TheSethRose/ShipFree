@@ -24,21 +24,55 @@ Run the dev server and visit:
 - `/examples/local-business` — Local business homepage scaffold
 - `/examples/product` — Product homepage scaffold
 
-## How later phases will work
+## Component organization
 
-### Phase 1 (current)
-Scaffold structure only. No full sections built yet.
+### Shared components
 
-### Phase 2
-Build shared section components in `src/components/homepage-examples/shared/`.
+Located in `src/components/homepage-examples/shared/`. These are reusable across all example types:
 
-### Phase 3
-Build example-specific sections in each `src/components/homepage-examples/{type}/` folder.
+- `example-header.tsx` — Generic responsive header with nav and CTAs
+- `example-footer.tsx` — Generic footer with link groups
+- `example-section-header.tsx` — Reusable section title block
+- `example-cta-section.tsx` — Final conversion CTA with card wrapper
+- `example-feature-grid.tsx` — Feature/benefit card grid
+- `example-proof-strip.tsx` — Stats/proof card strip
+- `example-testimonials.tsx` — Testimonial grid
+- `example-faq-section.tsx` — FAQ accordion section
+
+### Category-specific components
+
+Located in `src/components/homepage-examples/{type}/`. These are tailored to each site type:
+
+**SaaS:** `saas-hero`, `saas-dashboard-preview`, `saas-integrations`, `saas-pricing-preview`
+**Portfolio:** `portfolio-hero`, `project-grid`, `skills-grid`, `experience-timeline`
+**Agency:** `agency-hero`, `services-grid`, `process-section`, `results-section`
+**Local Business:** `local-business-hero`, `service-area-section`, `hours-contact-section`, `review-grid`, `gallery-preview`
+**Product:** `product-hero`, `product-showcase`, `license-section`, `product-pricing`
+
+## Data file responsibility
+
+Each example has its own data file in `src/data/homepage-examples/{type}.ts`. These contain:
+
+- Hero content, CTAs, and trust points
+- Navigation links
+- Feature lists, testimonials, FAQs
+- Pricing tiers, process steps, project lists
+- Footer link groups
+
+Components accept data via props. Data files are the single source of truth for each example.
+
+## Phase progression
+
+### Phase 1 (complete)
+Scaffold structure: routes, data files, docs, and placeholder pages.
+
+### Phase 2 (current)
+Build shared primitives and category-specific components. Components compile and accept props. Example routes may still show scaffold content.
+
+### Phase 3 (next)
+Compose final example pages by wiring components to data. Each `/examples/{type}` page renders a complete homepage using its components and data.
 
 ### Phase 4
-Wire up full example pages with real content and data files.
-
-### Phase 5
 Add a homepage switcher or config so users can select which homepage to render at `/`.
 
 ## How to delete the examples cleanly
