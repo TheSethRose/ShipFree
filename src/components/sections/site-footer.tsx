@@ -8,7 +8,7 @@ interface SiteFooterProps {
 
 export function SiteFooter({ className = '' }: SiteFooterProps) {
   return (
-    <footer className={`border-t border-[#E4E4E7] bg-[#F4F4F5] py-12 ${className}`}>
+    <footer className={`border-t border-[#E4E4E7] bg-white py-12 ${className}`}>
       <div className='mx-auto max-w-6xl px-4 sm:px-6'>
         {/* Link Columns */}
         <div className='grid grid-cols-2 gap-8 md:grid-cols-4'>
