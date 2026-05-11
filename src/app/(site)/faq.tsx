@@ -66,26 +66,26 @@ export default function FAQ() {
           FAQ
         </h2>
         <div className='grid md:grid-cols-2 gap-12 md:gap-16'>
-            {/* Left Section */}
-            <div>
-              <h2 className='text-4xl font-semibold tracking-tight mb-4'>
-                Frequently Asked Questions
-              </h2>
-              <p className='text-lg text-muted-foreground'>
-                Have another question?{' '}
-                <Link
-                  href='mailto:support@shipfree.app'
-                  className='underline underline-offset-4 hover:text-foreground transition-colors'
-                >
-                  Contact us by email
-                </Link>
-                .
-              </p>
-            </div>
+          {/* Left Section */}
+          <div>
+            <h2 className='text-4xl font-semibold tracking-tight mb-4'>
+              Frequently Asked Questions
+            </h2>
+            <p className='text-lg text-muted-foreground'>
+              Have another question?{' '}
+              <Link
+                href='mailto:support@shipfree.app'
+                className='underline underline-offset-4 hover:text-foreground transition-colors'
+              >
+                Contact us by email
+              </Link>
+              .
+            </p>
+          </div>
 
-            {/* Right Section */}
-            <div>
-              <ClientOnly>
+          {/* Right Section */}
+          <div>
+            <ClientOnly>
               <Accordion className='space-y-0'>
                 {faqs.map((faq, index) => (
                   <AccordionItem key={index} className='border-b border-[#E4E4E7] last:border-b-0'>
@@ -98,10 +98,10 @@ export default function FAQ() {
                   </AccordionItem>
                 ))}
               </Accordion>
-              </ClientOnly>
-            </div>
+            </ClientOnly>
           </div>
         </div>
+      </div>
     </section>
   )
 }

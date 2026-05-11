@@ -7,7 +7,6 @@ import { Flame } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 
-
 export default function Pricing() {
   const communityFeatures = [
     { text: 'Full Next.js boilerplate', included: true },
@@ -138,9 +137,7 @@ export default function Pricing() {
                 ))}
               </ul>
               <div className='flex flex-col gap-2'>
-                <Button className='w-full font-semibold h-12! text-base'>
-                  Get Started
-                </Button>
+                <Button className='w-full font-semibold h-12! text-base'>Get Started</Button>
                 <p className='text-sm text-center text-muted-foreground'>
                   Free forever. Build unlimited projects!
                 </p>

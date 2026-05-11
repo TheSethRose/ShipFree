@@ -68,8 +68,6 @@ export const env = createEnv({
     MICROSOFT_TENANT_ID: z.string().optional(),
     FACEBOOK_CLIENT_ID: z.string().optional(),
     FACEBOOK_CLIENT_SECRET: z.string().optional(),
-
-
   },
 
   client: {
@@ -91,8 +89,6 @@ export const env = createEnv({
     NEXT_PUBLIC_POLAR_PRODUCT_STARTER_MONTHLY: z.string().optional(),
     NEXT_PUBLIC_POLAR_PRODUCT_PRO_MONTHLY: z.string().optional(),
     NEXT_PUBLIC_POLAR_PRODUCT_ENTERPRISE_MONTHLY: z.string().optional(),
-
-
   },
 
   // Variables available on both server and client
@@ -169,7 +165,6 @@ export const env = createEnv({
     NEXT_PUBLIC_POLAR_PRODUCT_PRO_MONTHLY: process.env.NEXT_PUBLIC_POLAR_PRODUCT_PRO_MONTHLY,
     NEXT_PUBLIC_POLAR_PRODUCT_ENTERPRISE_MONTHLY:
       process.env.NEXT_PUBLIC_POLAR_PRODUCT_ENTERPRISE_MONTHLY,
-
   },
   emptyStringAsUndefined: true,
 })
