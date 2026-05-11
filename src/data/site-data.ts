@@ -17,7 +17,6 @@ export const siteConfig = {
 export const navLinks = [
   { label: 'Features', href: '/#features' },
   { label: 'Pricing', href: '/#pricing' },
-  { label: 'Docs', href: '/docs' },
   { label: 'FAQ', href: '/#faq' },
 ] as const
 
@@ -30,7 +29,7 @@ export const heroData = {
 } as const
 
 export const logoCloudData = {
-  label: 'BUILT WITH THE TOOLS FOUNDERS ALREADY TRUST',
+  label: 'BUILT WITH A MODERN SAAS STACK',
   logos: [
     { name: 'Vercel', src: '/stack-icons/vercel.svg' },
     { name: 'Stripe', src: '/stack-icons/stripe.svg' },

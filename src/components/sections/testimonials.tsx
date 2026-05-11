@@ -18,7 +18,7 @@ export function Testimonials({ className = '' }: TestimonialsProps) {
         </div>
         <div className='grid gap-8 sm:grid-cols-2 lg:grid-cols-3'>
           {testimonialsData.testimonials.map((t) => (
-            <div key={t.author} className='marketing-card'>
+            <div key={t.author} className='group marketing-card'>
               <p className='text-base leading-7 text-muted-foreground'>"{t.quote}"</p>
               <div className='mt-6 flex items-center gap-3'>
                 <img src={t.avatar} alt={t.author} className='h-10 w-10 rounded-full object-cover' />

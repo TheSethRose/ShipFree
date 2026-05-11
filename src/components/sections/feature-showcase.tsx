@@ -21,13 +21,13 @@ export function FeatureShowcase({ className = '' }: FeatureShowcaseProps) {
           {featureShowcaseData.showcases.map((item, index) => (
             <div
               key={item.title}
-              className={`marketing-card ${index === 0 ? 'lg:col-span-2' : ''}`}
+              className={`group marketing-card ${index === 0 ? 'lg:col-span-2 bg-foreground text-background' : ''}`}
             >
               <div className='mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-[#F4F4F5]'>
                 <img src={item.icon} alt={item.title} className='h-6 w-6' />
               </div>
               <h3 className='text-xl font-semibold'>{item.title}</h3>
-              <p className='card-description'>{item.description}</p>
+              <p className={`card-description ${index === 0 ? 'text-background/75' : ''}`}>{item.description}</p>
             </div>
           ))}
         </div>

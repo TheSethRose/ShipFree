@@ -22,7 +22,7 @@ export function SiteFeatures({ className = '' }: SiteFeaturesProps) {
         </div>
         <div className='mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3'>
           {featuresData.features.map((feature) => (
-            <div key={feature.title} className='marketing-card'>
+            <div key={feature.title} className='group marketing-card'>
               <div className='mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-[#F4F4F5]'>
                 <img
                   src={feature.icon}

@@ -25,8 +25,8 @@ export function SolutionSection({ className = '' }: SolutionSectionProps) {
           {solutionData.benefits.map((benefit, index) => {
             const Icon = icons[index]
             return (
-              <div key={benefit.title} className='marketing-card'>
-                <div className='mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-[#F4F4F5]'>
+              <div key={benefit.title} className='group marketing-card'>
+                <div className='mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-white'>
                   <Icon className='h-5 w-5 text-muted-foreground transition-colors duration-200 group-hover:text-foreground' />
                 </div>
                 <h3 className='text-lg font-semibold'>{benefit.title}</h3>

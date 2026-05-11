@@ -18,7 +18,7 @@ export function SiteHeader({ className = '' }: SiteHeaderProps) {
     <header
       className={`fixed inset-x-0 top-0 z-30 border-b border-[#E4E4E7] bg-[#F4F4F5]/90 backdrop-blur-xl ${className}`}
     >
-      <div className='mx-auto flex h-14 max-w-7xl items-center justify-between gap-8 px-4 sm:px-6'>
+      <div className='mx-auto flex h-16 max-w-6xl items-center justify-between gap-8 px-4 sm:px-6'>
         {/* Logo */}
         <Link href='/' className='flex items-center gap-2'>
           <img
@@ -87,14 +87,18 @@ export function SiteHeader({ className = '' }: SiteHeaderProps) {
                 variant='ghost'
                 size='sm'
                 className='justify-start'
-                render={(props) => <Link {...props} href='/login' />}
+                render={(props) => (
+                  <Link {...props} href='/login' onClick={() => setIsMenuOpen(false)} />
+                )}
               >
                 Sign in
               </Button>
               <Button
                 size='sm'
                 className='justify-start'
-                render={(props) => <Link {...props} href='/register' />}
+                render={(props) => (
+                  <Link {...props} href='/register' onClick={() => setIsMenuOpen(false)} />
+                )}
               >
                 Start free
               </Button>

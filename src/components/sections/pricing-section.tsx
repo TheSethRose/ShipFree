@@ -46,12 +46,15 @@ export function PricingSection({ className = '' }: PricingSectionProps) {
               </ul>
               <div className='mt-8'>
                 <Button
-                  className='w-full'
+                  className='h-12 w-full text-base font-semibold'
                   variant={tier.highlighted ? 'default' : 'outline'}
                   render={(props) => <Link {...props} href={tier.cta.href} />}
                 >
                   {tier.cta.label}
                 </Button>
+                <p className='mt-3 text-center text-sm text-muted-foreground'>
+                  No credit card required. Upgrade only when you need more.
+                </p>
               </div>
             </div>
           ))}

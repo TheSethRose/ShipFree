@@ -25,7 +25,7 @@ export function ProblemSection({ className = '' }: ProblemSectionProps) {
           {problemData.painPoints.map((point, index) => {
             const Icon = icons[index]
             return (
-              <div key={point.title} className='marketing-card'>
+              <div key={point.title} className='group marketing-card'>
                 <div className='mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-[#F4F4F5]'>
                   <Icon className='h-5 w-5 text-muted-foreground transition-colors duration-200 group-hover:text-foreground' />
                 </div>

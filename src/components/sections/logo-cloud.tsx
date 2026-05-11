@@ -8,7 +8,7 @@ interface LogoCloudProps {
 
 export function LogoCloud({ className = '' }: LogoCloudProps) {
   return (
-    <section className={`border-t border-b border-[#E4E4E7] bg-white py-12 ${className}`}>
+    <section className={`border-t border-b border-[#E4E4E7] bg-[#F4F4F5] py-12 ${className}`}>
       <div className='mx-auto max-w-6xl px-4 sm:px-6'>
         <p
           className='mb-8 text-center text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground'

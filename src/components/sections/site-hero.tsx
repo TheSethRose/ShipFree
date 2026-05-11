@@ -14,7 +14,7 @@ export function SiteHero({ className = '' }: SiteHeroProps) {
   return (
     <section
       id='hero'
-      className={`flex min-h-[86vh] flex-col items-center justify-center bg-[#F4F4F5] px-4 pb-20 pt-32 sm:px-6 md:pb-24 ${className}`}
+      className={`flex min-h-[86vh] flex-col items-center justify-center bg-white px-4 pb-20 pt-32 sm:px-6 md:pb-24 ${className}`}
     >
       <div className='mx-auto w-full max-w-6xl'>
         <div className='mx-auto max-w-4xl text-center'>
@@ -33,9 +33,9 @@ export function SiteHero({ className = '' }: SiteHeroProps) {
             {heroData.subheadline}
           </p>
 
-          <div className='mx-auto mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row'>
+          <div className='mx-auto mt-10 flex w-full max-w-sm flex-col items-stretch justify-center gap-3 sm:max-w-none sm:flex-row sm:items-center'>
             <Button
-              className='h-12 px-8 text-base font-semibold'
+              className='h-12 w-full px-8 text-base font-semibold sm:w-auto'
               render={(props) => (
                 <Link {...props} href={heroData.primaryCta.href}>
                   {heroData.primaryCta.label}
@@ -45,7 +45,7 @@ export function SiteHero({ className = '' }: SiteHeroProps) {
             />
             <Button
               variant='outline'
-              className='h-12 bg-white px-8 text-base font-semibold'
+              className='h-12 w-full bg-white px-8 text-base font-semibold sm:w-auto'
               render={(props) => (
                 <Link {...props} href={heroData.secondaryCta.href}>
                   {heroData.secondaryCta.label}
@@ -81,16 +81,27 @@ export function SiteHero({ className = '' }: SiteHeroProps) {
 
             <div className='grid gap-4 md:grid-cols-[1.1fr_0.9fr]'>
               <div className='rounded-2xl bg-white p-6 shadow-sm'>
-                <div className='mb-6 h-4 w-32 rounded-full bg-[#E4E4E7]' />
+                <div className='mb-6'>
+                  <p className='text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground'>
+                    Product dashboard
+                  </p>
+                  <h3 className='mt-2 text-2xl font-semibold tracking-tight'>
+                    Launch checklist
+                  </h3>
+                </div>
                 <div className='space-y-3'>
                   <div className='h-8 w-3/4 rounded-lg bg-[#E4E4E7]' />
                   <div className='h-4 w-full rounded-lg bg-[#E4E4E7]' />
                   <div className='h-4 w-5/6 rounded-lg bg-[#E4E4E7]' />
                 </div>
                 <div className='mt-8 grid gap-3 sm:grid-cols-3'>
-                  <div className='h-24 rounded-xl bg-[#F4F4F5]' />
-                  <div className='h-24 rounded-xl bg-[#F4F4F5]' />
-                  <div className='h-24 rounded-xl bg-[#F4F4F5]' />
+                  {['Auth', 'Billing', 'Deploy'].map((label) => (
+                    <div key={label} className='rounded-xl bg-[#F4F4F5] p-4'>
+                      <div className='mb-3 h-2 w-10 rounded-full bg-[#E4E4E7]' />
+                      <p className='text-sm font-semibold'>{label}</p>
+                      <p className='mt-1 text-xs text-muted-foreground'>Ready</p>
+                    </div>
+                  ))}
                 </div>
               </div>
 
