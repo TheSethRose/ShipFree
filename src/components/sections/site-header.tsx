@@ -16,7 +16,7 @@ export function SiteHeader({ className = '' }: SiteHeaderProps) {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-30 border-b border-[#E4E4E7] bg-[#F4F4F5] ${className}`}
+      className={`fixed inset-x-0 top-0 z-30 border-b border-[#E4E4E7] bg-[#F4F4F5]/90 backdrop-blur-xl ${className}`}
     >
       <div className='mx-auto flex h-14 max-w-7xl items-center justify-between gap-8 px-4 sm:px-6'>
         {/* Logo */}
@@ -53,7 +53,7 @@ export function SiteHeader({ className = '' }: SiteHeaderProps) {
             Sign in
           </Button>
           <Button size='sm' render={(props) => <Link {...props} href='/register' />}>
-            Get Started
+            Start free
           </Button>
         </div>
 
@@ -96,7 +96,7 @@ export function SiteHeader({ className = '' }: SiteHeaderProps) {
                 className='justify-start'
                 render={(props) => <Link {...props} href='/register' />}
               >
-                Get Started
+                Start free
               </Button>
             </div>
           </nav>

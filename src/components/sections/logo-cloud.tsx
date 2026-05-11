@@ -11,7 +11,7 @@ export function LogoCloud({ className = '' }: LogoCloudProps) {
     <section className={`border-t border-b border-[#E4E4E7] bg-white py-12 ${className}`}>
       <div className='mx-auto max-w-6xl px-4 sm:px-6'>
         <p
-          className='mb-8 text-center text-sm font-medium text-muted-foreground'
+          className='mb-8 text-center text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground'
           style={{ fontFamily: 'var(--font-geist-mono)' }}
         >
           {logoCloudData.label}

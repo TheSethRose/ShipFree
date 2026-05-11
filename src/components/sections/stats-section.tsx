@@ -8,10 +8,10 @@ interface StatsSectionProps {
 
 export function StatsSection({ className = '' }: StatsSectionProps) {
   return (
-    <section className={`border-b border-[#E4E4E7] bg-[#F4F4F5] py-24 ${className}`}>
+    <section className={`section-padding border-b border-[#E4E4E7] bg-[#F4F4F5] ${className}`}>
       <div className='mx-auto max-w-6xl px-4 sm:px-6'>
         <p
-          className='mb-12 text-center text-sm font-medium text-muted-foreground'
+          className='mb-12 text-center text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground'
           style={{ fontFamily: 'var(--font-geist-mono)' }}
         >
           {statsData.label}

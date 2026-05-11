@@ -12,38 +12,30 @@ interface SiteCtaProps {
 
 export function SiteCta({ className = '' }: SiteCtaProps) {
   return (
-    <section className={`border-t border-b border-[#E4E4E7] bg-[#F4F4F5] py-24 px-4 sm:px-6 ${className}`}>
+    <section className={`section-padding border-t border-b border-[#E4E4E7] bg-white px-4 sm:px-6 ${className}`}>
       <div className='mx-auto max-w-4xl text-center'>
-        {/* Section Label */}
-        <h2
-          className='mb-8 text-sm font-medium text-muted-foreground'
-          style={{ fontFamily: 'var(--font-geist-mono)' }}
-        >
+        <h2 className='section-kicker' style={{ fontFamily: 'var(--font-geist-mono)' }}>
           {ctaData.label}
         </h2>
-
-        {/* Title + Description */}
-        <h2 className='text-4xl font-semibold tracking-tight'>{ctaData.title}</h2>
-        <p className='mt-4 text-lg text-muted-foreground'>{ctaData.description}</p>
-
-        {/* Buttons */}
+        <h2 className='section-heading'>{ctaData.title}</h2>
+        <p className='section-description'>{ctaData.description}</p>
         <div className='mx-auto mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row'>
           <Button
             className='h-12 px-8 text-base font-semibold'
             render={(props) => (
               <Link {...props} href={ctaData.primaryCta.href}>
                 {ctaData.primaryCta.label}
-                <ArrowUpRight className='h-8 w-8' />
+                <ArrowUpRight className='h-5 w-5' />
               </Link>
             )}
           />
           <Button
             variant='outline'
-            className='h-12 px-8 text-base font-semibold'
+            className='h-12 bg-white px-8 text-base font-semibold'
             render={(props) => (
               <Link {...props} href={ctaData.secondaryCta.href}>
                 {ctaData.secondaryCta.label}
-                <ArrowUpRight className='h-8 w-8' />
+                <ArrowUpRight className='h-5 w-5' />
               </Link>
             )}
           />

@@ -13,7 +13,7 @@ import { PricingSection } from '@/components/sections/pricing-section'
 import { FAQSection } from '@/components/sections/faq-section'
 import { SiteCta } from '@/components/sections/site-cta'
 import { SiteFooter } from '@/components/sections/site-footer'
-import { GridLayout, SectionDivider } from './(site)/grid-layout'
+import { GridLayout } from './(site)/grid-layout'
 
 export default function Page() {
   return (
@@ -21,27 +21,16 @@ export default function Page() {
       <SiteHeader />
       <SiteHero />
       <LogoCloud />
-      <SectionDivider />
-      <ProblemSection />
-      <SectionDivider />
-      <SolutionSection />
-      <SectionDivider />
-      <SiteFeatures />
-      <SectionDivider />
-      <FeatureShowcase />
-      <SectionDivider />
-      <HowItWorks />
-      <SectionDivider />
-      <UseCases />
-      <SectionDivider />
       <StatsSection />
-      <SectionDivider />
+      <ProblemSection />
+      <SolutionSection />
+      <SiteFeatures />
+      <FeatureShowcase />
+      <HowItWorks />
+      <UseCases />
       <Testimonials />
-      <SectionDivider />
       <PricingSection />
-      <SectionDivider />
       <FAQSection />
-      <SectionDivider />
       <SiteCta />
       <SiteFooter />
     </GridLayout>

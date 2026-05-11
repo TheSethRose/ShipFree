@@ -24,13 +24,13 @@ export const navLinks = [
 export const heroData = {
   headline: 'Ship your startup in days, not weeks',
   subheadline:
-    'A modern boilerplate that saves you weeks of setup so you can spend time building features that actually make money.',
-  primaryCta: { label: 'Get Started', href: '/register' },
-  secondaryCta: { label: 'Try demo', href: '/dashboard' },
+    'A production-ready Next.js starter with auth, payments, database, emails, analytics, and deployment already wired up — so you can launch the product, not the plumbing.',
+  primaryCta: { label: 'Start building free', href: '/register' },
+  secondaryCta: { label: 'View live demo', href: '/dashboard' },
 } as const
 
 export const logoCloudData = {
-  label: 'TRUSTED BY DEVELOPERS AT',
+  label: 'BUILT WITH THE TOOLS FOUNDERS ALREADY TRUST',
   logos: [
     { name: 'Vercel', src: '/stack-icons/vercel.svg' },
     { name: 'Stripe', src: '/stack-icons/stripe.svg' },
@@ -166,10 +166,10 @@ export const useCasesData = {
 export const statsData = {
   label: 'BY THE NUMBERS',
   stats: [
-    { value: '100+', label: 'Hours saved' },
-    { value: '3', label: 'Minutes to deploy' },
-    { value: '6', label: 'Payment providers' },
-    { value: '∞', label: 'Projects you can build' },
+    { value: '100+', label: 'Setup hours saved' },
+    { value: '3', label: 'Core steps to deploy' },
+    { value: '6', label: 'Payment providers supported' },
+    { value: '∞', label: 'Products you can build' },
   ],
 } as const
 
@@ -178,19 +178,19 @@ export const testimonialsData = {
   title: 'Loved by indie hackers',
   testimonials: [
     {
-      quote: 'ShipFree saved me two weeks of setup. I had auth and payments working on day one.',
+      quote: 'ShipFree saved me roughly two weeks of setup. Auth, billing, and emails were working before I wrote my first product feature.',
       author: 'Alex Chen',
       role: 'Indie Hacker',
       avatar: '/testimonial-image1.jpg',
     },
     {
-      quote: 'The best Next.js boilerplate I have used. Clean code, great DX, and it actually works.',
+      quote: 'The codebase is clean, typed, and easy to customize. I had a paid SaaS demo live by the end of the weekend.',
       author: 'Sarah Kim',
       role: 'Founder, SaaSify',
       avatar: '/testimonial-image2.png',
     },
     {
-      quote: 'I shipped my MVP in a weekend instead of a month. This template is a game changer.',
+      quote: 'I stopped rebuilding the same login, billing, and dashboard flows. ShipFree gave me the foundation to actually ship.',
       author: 'Marcus Johnson',
       role: 'Solo Founder',
       avatar: '/testimonial-image3.png',
@@ -215,7 +215,7 @@ export const pricingData = {
         'Payments via Stripe / Polar / Lemon Squeezy',
         'MIT open-source license',
       ],
-      cta: { label: 'Get Started', href: '/register' },
+      cta: { label: 'Start building free', href: '/register' },
       highlighted: true,
     },
   ],
@@ -237,10 +237,11 @@ export const faqData = {
 
 export const ctaData = {
   label: 'GET STARTED',
-  title: 'Your next product could be live by tonight.',
-  description: 'Focus on growth while the stack takes care of the heavy lifting.',
-  primaryCta: { label: 'Get Started', href: '/register' },
-  secondaryCta: { label: 'Try demo', href: '/dashboard' },
+  title: 'Your next product could be live this week.',
+  description:
+    'Clone the starter, connect your tools, and spend your energy building the features your customers actually care about.',
+  primaryCta: { label: 'Start building free', href: '/register' },
+  secondaryCta: { label: 'View live demo', href: '/dashboard' },
 } as const
 
 export const footerData = {
