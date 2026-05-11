@@ -1,0 +1,55 @@
+# Homepage Examples
+
+## What this is
+
+This folder contains **alternate homepage patterns** for different site types. It is a sandbox area where new homepage designs can be built, previewed, and tested without touching the current production homepage.
+
+## Why the current homepage is not changed
+
+The existing homepage at `/` is the primary ShipFree landing page. It is stable, tested, and optimized. The examples area exists so that:
+
+- New homepage patterns can be developed in isolation.
+- Different site types (SaaS, portfolio, agency, etc.) can have tailored homepages.
+- Experiments can happen without risk to the main site.
+- Users can fork the repo and swap in the homepage that fits their product.
+
+## How to preview examples
+
+Run the dev server and visit:
+
+- `/examples` — Overview of all homepage patterns
+- `/examples/saas` — SaaS homepage scaffold
+- `/examples/portfolio` — Portfolio homepage scaffold
+- `/examples/agency` — Agency homepage scaffold
+- `/examples/local-business` — Local business homepage scaffold
+- `/examples/product` — Product homepage scaffold
+
+## How later phases will work
+
+### Phase 1 (current)
+Scaffold structure only. No full sections built yet.
+
+### Phase 2
+Build shared section components in `src/components/homepage-examples/shared/`.
+
+### Phase 3
+Build example-specific sections in each `src/components/homepage-examples/{type}/` folder.
+
+### Phase 4
+Wire up full example pages with real content and data files.
+
+### Phase 5
+Add a homepage switcher or config so users can select which homepage to render at `/`.
+
+## How to delete the examples cleanly
+
+If you do not need the examples, delete these folders and files:
+
+```bash
+rm -rf src/app/examples
+rm -rf src/components/homepage-examples
+rm -rf src/data/homepage-examples
+rm docs/homepage-examples.mdx
+```
+
+No other files depend on these. The main homepage at `/` will remain untouched.
