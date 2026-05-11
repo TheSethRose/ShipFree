@@ -28,18 +28,25 @@ export function SiteCta({ className = '' }: SiteCtaProps) {
 
         {/* Buttons */}
         <div className='mx-auto mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row'>
-          <Button className='h-12 px-8 text-base font-semibold' asChild>
-            <Link href={ctaData.primaryCta.href}>
-              {ctaData.primaryCta.label}
-              <ArrowUpRight className='h-8 w-8' />
-            </Link>
-          </Button>
-          <Button variant='outline' className='h-12 px-8 text-base font-semibold' asChild>
-            <Link href={ctaData.secondaryCta.href}>
-              {ctaData.secondaryCta.label}
-              <ArrowUpRight className='h-8 w-8' />
-            </Link>
-          </Button>
+          <Button
+            className='h-12 px-8 text-base font-semibold'
+            render={(props) => (
+              <Link {...props} href={ctaData.primaryCta.href}>
+                {ctaData.primaryCta.label}
+                <ArrowUpRight className='h-8 w-8' />
+              </Link>
+            )}
+          />
+          <Button
+            variant='outline'
+            className='h-12 px-8 text-base font-semibold'
+            render={(props) => (
+              <Link {...props} href={ctaData.secondaryCta.href}>
+                {ctaData.secondaryCta.label}
+                <ArrowUpRight className='h-8 w-8' />
+              </Link>
+            )}
+          />
         </div>
       </div>
     </section>

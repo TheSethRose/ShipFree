@@ -49,11 +49,11 @@ export function SiteHeader({ className = '' }: SiteHeaderProps) {
 
         {/* Desktop Actions */}
         <div className='hidden items-center gap-3 md:flex'>
-          <Button variant='ghost' size='sm' asChild>
-            <Link href='/login'>Sign in</Link>
+          <Button variant='ghost' size='sm' render={(props) => <Link {...props} href='/login' />}>
+            Sign in
           </Button>
-          <Button size='sm' asChild>
-            <Link href='/register'>Get Started</Link>
+          <Button size='sm' render={(props) => <Link {...props} href='/register' />}>
+            Get Started
           </Button>
         </div>
 
@@ -83,11 +83,20 @@ export function SiteHeader({ className = '' }: SiteHeaderProps) {
               </Link>
             ))}
             <div className='mt-2 flex flex-col gap-2 border-t border-border pt-2'>
-              <Button variant='ghost' size='sm' className='justify-start' asChild>
-                <Link href='/login'>Sign in</Link>
+              <Button
+                variant='ghost'
+                size='sm'
+                className='justify-start'
+                render={(props) => <Link {...props} href='/login' />}
+              >
+                Sign in
               </Button>
-              <Button size='sm' className='justify-start' asChild>
-                <Link href='/register'>Get Started</Link>
+              <Button
+                size='sm'
+                className='justify-start'
+                render={(props) => <Link {...props} href='/register' />}
+              >
+                Get Started
               </Button>
             </div>
           </nav>

@@ -1,7 +1,5 @@
 'use client'
 
-import Image from 'next/image'
-
 import { featuresData } from '@/data/site-data'
 
 interface SiteFeaturesProps {
@@ -34,15 +32,13 @@ export function SiteFeatures({ className = '' }: SiteFeaturesProps) {
           {featuresData.features.map((feature) => (
             <div
               key={feature.title}
-              className='group rounded-xl bg-white p-6 shadow-xs transition-shadow duration-200 hover:shadow-sm'
+              className='group rounded-xl bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-md'
             >
               <div className='mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-[#F4F4F5]'>
-                <Image
+                <img
                   src={feature.icon}
                   alt={feature.title}
-                  width={28}
-                  height={28}
-                  className='opacity-80 transition-opacity duration-200 group-hover:opacity-100'
+                  className='h-7 w-7 opacity-80 transition-opacity duration-200 group-hover:opacity-100'
                 />
               </div>
               <h3 className='text-lg font-semibold'>{feature.title}</h3>

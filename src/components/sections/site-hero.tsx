@@ -25,18 +25,25 @@ export function SiteHero({ className = '' }: SiteHeroProps) {
             {heroData.subheadline}
           </p>
           <div className='mx-auto mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row'>
-            <Button className='h-12 px-8 text-base font-semibold' asChild>
-              <Link href={heroData.primaryCta.href}>
-                {heroData.primaryCta.label}
-                <ArrowUpRight className='h-8 w-8' />
-              </Link>
-            </Button>
-            <Button variant='outline' className='h-12 px-8 text-base font-semibold' asChild>
-              <Link href={heroData.secondaryCta.href}>
-                {heroData.secondaryCta.label}
-                <ArrowUpRight className='h-8 w-8' />
-              </Link>
-            </Button>
+            <Button
+              className='h-12 px-8 text-base font-semibold'
+              render={(props) => (
+                <Link {...props} href={heroData.primaryCta.href}>
+                  {heroData.primaryCta.label}
+                  <ArrowUpRight className='h-8 w-8' />
+                </Link>
+              )}
+            />
+            <Button
+              variant='outline'
+              className='h-12 px-8 text-base font-semibold'
+              render={(props) => (
+                <Link {...props} href={heroData.secondaryCta.href}>
+                  {heroData.secondaryCta.label}
+                  <ArrowUpRight className='h-8 w-8' />
+                </Link>
+              )}
+            />
           </div>
         </div>
       </div>

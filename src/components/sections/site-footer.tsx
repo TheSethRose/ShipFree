@@ -21,18 +21,21 @@ export function SiteFooter({ className = '' }: SiteFooterProps) {
                 {column.title}
               </h3>
               <ul className='space-y-3'>
-                {column.links.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      target={link.external ? '_blank' : undefined}
-                      rel={link.external ? 'noopener noreferrer' : undefined}
-                      className='text-sm font-medium text-muted-foreground transition-colors duration-200 ease-in-out hover:text-foreground'
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
+                {column.links.map((link) => {
+                  const isExternal = 'external' in link && link.external
+                  return (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        target={isExternal ? '_blank' : undefined}
+                        rel={isExternal ? 'noopener noreferrer' : undefined}
+                        className='text-sm font-medium text-muted-foreground transition-colors duration-200 ease-in-out hover:text-foreground'
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  )
+                })}
               </ul>
             </div>
           ))}
