@@ -14,7 +14,7 @@ export function SiteHero({ className = '' }: SiteHeroProps) {
   return (
     <section
       id='hero'
-      className={`flex min-h-screen flex-col items-center justify-start bg-[#F4F4F5] pb-24 pt-40 ${className}`}
+      className={`flex min-h-[80vh] flex-col items-center justify-center bg-[#F4F4F5] pb-20 pt-10 ${className}`}
     >
       <div className='mx-auto w-full max-w-6xl px-4 sm:px-6'>
         <div className='mx-auto max-w-4xl text-center'>
